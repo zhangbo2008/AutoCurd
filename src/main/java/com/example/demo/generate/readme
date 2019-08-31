@@ -1,0 +1,17 @@
+以后代码生成器相关代码都写这个generatea里面.
+
+1.把pom备份.xml贴到项目中引入相关maven包
+2.修改ConfigAllParam文件中的参数.
+3.修改MysqlGenerator里面的表的信息.然后运行建立数据库和测试数据
+4.运行MybatisPlusGenerator来生成各个层的代码.
+5.运行DemoApplication
+
+项目先跑起来,然后改一点跑一次,保证最后能跑起来.
+
+
+
+
+
+
+
+
