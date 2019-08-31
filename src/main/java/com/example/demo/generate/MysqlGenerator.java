@@ -61,11 +61,11 @@ public class MysqlGenerator {
 
 
 
-        try {
-            Class.forName("dsf");
-        } catch (ClassNotFoundException var6) {
-            var6.printStackTrace();
-        }
+//        try {     新版本已经不需要了!不写也自动好使!
+//            Class.forName((String) params.get("driver"));
+//        } catch (ClassNotFoundException var6) {
+//            var6.printStackTrace();
+//        }
 
         try {
             con = DriverManager.getConnection((String) params.get("springDatasourceUrl"), (String) params.get("username"),(String) params.get("password"));
@@ -78,23 +78,18 @@ public class MysqlGenerator {
             stmt.executeUpdate(sql1);
             System.out.println(fun(3, 2, RandomUtils.TYPE.CAPITAL));
             stmt.executeUpdate(fun(3, 2, RandomUtils.TYPE.CAPITAL));
-            System.out.println(fun(2, 2, RandomUtils.TYPE.NUMBER));
-            System.out.println(fun(2, 2, RandomUtils.TYPE.NUMBER));
-            System.out.println(fun(2, 2, RandomUtils.TYPE.NUMBER));
-            System.out.println(fun(2, 2, RandomUtils.TYPE.NUMBER));
-            System.out.println(fun(2, 2, RandomUtils.TYPE.NUMBER));
-            System.out.println(fun(2, 2, RandomUtils.TYPE.NUMBER));
-            System.out.println(fun(2, 2, RandomUtils.TYPE.NUMBER));
-            System.out.println(fun(2, 2, RandomUtils.TYPE.NUMBER));
-            System.out.println(fun(2, 2, RandomUtils.TYPE.NUMBER));
-            System.out.println(fun(2, 2, RandomUtils.TYPE.NUMBER));
-            System.out.println(fun(2, 2, RandomUtils.TYPE.NUMBER));
-            System.out.println(fun(2, 2, RandomUtils.TYPE.NUMBER));
-            System.out.println(fun(2, 2, RandomUtils.TYPE.NUMBER));
-            System.out.println(fun(2, 2, RandomUtils.TYPE.NUMBER));
-            System.out.println(fun(2, 2, RandomUtils.TYPE.NUMBER));
-            System.out.println(fun(2, 2, RandomUtils.TYPE.NUMBER));
-            System.out.println(fun(2, 2, RandomUtils.TYPE.NUMBER));
+            stmt.executeUpdate(fun(3, 2, RandomUtils.TYPE.CAPITAL));
+            stmt.executeUpdate(fun(3, 2, RandomUtils.TYPE.CAPITAL));
+            stmt.executeUpdate(fun(3, 2, RandomUtils.TYPE.CAPITAL));
+            stmt.executeUpdate(fun(3, 2, RandomUtils.TYPE.CAPITAL));
+            stmt.executeUpdate(fun(3, 2, RandomUtils.TYPE.CAPITAL));
+            stmt.executeUpdate(fun(3, 2, RandomUtils.TYPE.CAPITAL));
+            stmt.executeUpdate(fun(3, 2, RandomUtils.TYPE.CAPITAL));
+            stmt.executeUpdate(fun(3, 2, RandomUtils.TYPE.CAPITAL));
+            stmt.executeUpdate(fun(3, 2, RandomUtils.TYPE.CAPITAL));
+            stmt.executeUpdate(fun(3, 2, RandomUtils.TYPE.CAPITAL));
+            stmt.executeUpdate(fun(3, 2, RandomUtils.TYPE.CAPITAL));
+
 
             System.out.println("已经写入数据");
         } catch (SQLException var5) {

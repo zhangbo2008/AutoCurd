@@ -48,7 +48,7 @@ public class MyBatisPlusGenerator {
         System.out.println(filePath1);
         System.out.println(filePath1);
         System.out.println((String) params.get("package1"));
-        sleep(99999999);
+//        sleep(99999999);
         //注意要进行转义.
         String[] tmp5 = ((String) params.get("package1")).split("\\.");
 

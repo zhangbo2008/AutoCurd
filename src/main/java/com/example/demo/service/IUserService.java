@@ -1,9 +1,7 @@
 package com.example.demo.service;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.demo.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * <p>
@@ -14,7 +12,5 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @since 2019-08-31
  */
 public interface IUserService extends IService<User> {
-
-
 
 }
