@@ -114,6 +114,6 @@ public class MyBatisPlusGenerator {
         strategy.setControllerMappingHyphenStyle(true);
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
-        mpg.execute();
+        mpg.execute();//dafd
     }
 }
