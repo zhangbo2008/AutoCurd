@@ -18,6 +18,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Thread.sleep;
+
 public class MyBatisPlusGenerator {
     public MyBatisPlusGenerator() throws IOException {
     }
@@ -29,6 +31,7 @@ public class MyBatisPlusGenerator {
         System.out.println(filePath1);
         System.out.println(filePath1);
         System.out.println(ConfigAllParam.package1);
+        sleep(99999999);
         //注意要进行转义.
         String[] tmp5 = ConfigAllParam.package1.split("\\.");
 
