@@ -17,10 +17,27 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static java.lang.Thread.sleep;
 
 public class MyBatisPlusGenerator {
+
+
+    private static Map params;
+
+    static {
+        try {
+            params = testDom4j.fun2();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
     public MyBatisPlusGenerator() throws IOException {
     }
 
@@ -30,10 +47,10 @@ public class MyBatisPlusGenerator {
         String filePath1 = file1.getCanonicalPath();
         System.out.println(filePath1);
         System.out.println(filePath1);
-        System.out.println(ConfigAllParam.package1);
+        System.out.println((String) params.get("package1"));
         sleep(99999999);
         //注意要进行转义.
-        String[] tmp5 = ConfigAllParam.package1.split("\\.");
+        String[] tmp5 = ((String) params.get("package1")).split("\\.");
 
         System.out.println(tmp5);
         System.out.println(tmp5[0]);
@@ -64,14 +81,14 @@ public class MyBatisPlusGenerator {
         gc.setOpen(false);
         mpg.setGlobalConfig(gc);
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl(ConfigAllParam.springDatasourceUrl);
-        dsc.setDriverName(ConfigAllParam.driver);
-        dsc.setUsername(ConfigAllParam.username);
-        dsc.setPassword(ConfigAllParam.password);
+        dsc.setUrl((String) params.get("springDatasourceUrl"));
+        dsc.setDriverName((String) params.get("driver"));
+        dsc.setUsername((String) params.get("username"));
+        dsc.setPassword((String) params.get("password"));
         mpg.setDataSource(dsc);
         System.out.println(dsc);
         PackageConfig pc = new PackageConfig();
-        pc.setParent(ConfigAllParam.package1);
+        pc.setParent((String) params.get("package1"));
         mpg.setPackageInfo(pc);
         InjectionConfig cfg = new InjectionConfig() {
             public void initMap() {

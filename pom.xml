@@ -25,7 +25,7 @@
         <password>root</password>         <!--        &amp;  这个来表示&符号-->
         <springDatasourceUrl>jdbc:mysql://${datasource}:${port}/${database}?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=CONVERT_TO_NULL&amp;useSSL=false&amp;serverTimezone=UTC</springDatasourceUrl>
 
-       <basedir>${project.basedir}</basedir>
+<!--       <basedir>${project.basedir}</basedir>     这种内置遍历不能写了,因为我要解析,这种没法解析.-->
 
 
 <!--

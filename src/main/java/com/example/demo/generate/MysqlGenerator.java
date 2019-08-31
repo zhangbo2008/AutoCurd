@@ -12,9 +12,23 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MysqlGenerator {
-    public MysqlGenerator() {
+     private static Map params;
+
+    static {
+        try {
+            params = testDom4j.fun2();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public MysqlGenerator() throws IOException, InterruptedException {
     }
 
     public static void main(String[] args) throws IOException {
@@ -29,18 +43,32 @@ public class MysqlGenerator {
 
     public static void fun1() throws IOException {
         System.out.println(111111);
-        System.out.println(ConfigAllParam.springDatasourceUrl);
+        System.out.println(params.get("springDatasourceUrl"));
         Statement stmt = null;
         Connection con = null;
+        System.out.println(params.getClass().getName());
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         try {
-            Class.forName(ConfigAllParam.driver);
+            Class.forName("dsf");
         } catch (ClassNotFoundException var6) {
             var6.printStackTrace();
         }
 
         try {
-            con = DriverManager.getConnection(ConfigAllParam.springDatasourceUrl, ConfigAllParam.username, ConfigAllParam.password);
+            con = DriverManager.getConnection((String) params.get("springDatasourceUrl"), (String) params.get("username"),(String) params.get("password"));
             stmt = con.createStatement();
             stmt = con.createStatement();
             String sql3 = "DROP TABLE IF EXISTS `user`;";
